@@ -49,7 +49,7 @@ class CompanionHealthPlugin(val activity: Activity, val channel: MethodChannel):
   companion object {
     @JvmStatic
     fun registerWith(registrar: Registrar) {
-      val channel = MethodChannel(registrar.messenger(), "flutter_health")
+      val channel = MethodChannel(registrar.messenger(), "companion_health")
       val plugin = HealthPlugin(registrar.activity(), channel)
       registrar.addActivityResultListener(plugin)
       channel.setMethodCallHandler(plugin)
@@ -94,10 +94,10 @@ class CompanionHealthPlugin(val activity: Activity, val channel: MethodChannel):
   override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
     if (requestCode == GOOGLE_FIT_PERMISSIONS_REQUEST_CODE) {
       if (resultCode == Activity.RESULT_OK) {
-        Log.d("FLUTTER_HEALTH", "Access Granted!")
+        Log.d("COMPANION_HEALTH", "Access Granted!")
         mResult?.success(true)
       } else if (resultCode == Activity.RESULT_CANCELED) {
-        Log.d("FLUTTER_HEALTH", "Access Denied!")
+        Log.d("COMPANION_HEALTH", "Access Denied!")
         mResult?.success(false);
       }
     }
@@ -155,7 +155,7 @@ class CompanionHealthPlugin(val activity: Activity, val channel: MethodChannel):
         try {
           dataPoint.getValue(unit).asString()
         } catch (e3: Exception) {
-          Log.e("FLUTTER_HEALTH::ERROR", e3.toString())
+          Log.e("COMPANION_HEALTH::ERROR", e3.toString())
         }
       }
     }

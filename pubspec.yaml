@@ -1,6 +1,6 @@
 name: companion_health
 description: Companion health plugin
-version: 0.0.1
+version: 0.0.2
 homepage: https://github.com/arifjmamun/companion_health
 
 environment:

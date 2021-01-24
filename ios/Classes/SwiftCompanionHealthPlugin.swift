@@ -43,7 +43,7 @@ public class SwiftHealthPlugin: NSObject, FlutterPlugin {
 
 
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "flutter_health", binaryMessenger: registrar.messenger())
+        let channel = FlutterMethodChannel(name: "companion_health", binaryMessenger: registrar.messenger())
         let instance = SwiftHealthPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
