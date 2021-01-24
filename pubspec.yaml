@@ -2,7 +2,7 @@ name: companion_health
 description: Companion health plugin
 version: 0.0.1
 author: Ariful Islam
-homepage:
+homepage: https://github.com/arifjmamun/companion_health
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
